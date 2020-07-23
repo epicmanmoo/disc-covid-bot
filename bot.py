@@ -41,7 +41,7 @@ async def covid(ctx, *args):
         embed.add_field(name="Deaths Today", value="+" + str(f'{total_site_data["todayDeaths"]:,}'))
         embed.add_field(name="Affected Countries", value=str(f'{total_site_data["affectedCountries"]:,}'))
         date = datetime.datetime.fromtimestamp(total_site_data['updated'] / 1000.0)
-        date = date.strftime('%B %-dth, %Y. %-I:%M %p')
+        date = date.strftime('%B %-d, %Y. %-I:%M %p')
         embed.set_footer(text="Last Updated: " + date + " GMT-4")
         await ctx.send(embed=embed)
     elif args[0].lower() == 'all':
@@ -108,7 +108,7 @@ async def covid(ctx, *args):
             embed.add_field(name="Deaths Today", value="+" + str(f'{country["todayDeaths"]:,}'))
             embed.add_field(name="Active Cases", value=str(f'{country["active"]:,}'))
             date = datetime.datetime.fromtimestamp(country['updated'] / 1000.0)
-            date = date.strftime('%B %-dth, %Y. %-I:%M %p')
+            date = date.strftime('%B %-d, %Y. %-I:%M %p')
             embed.set_footer(text="Last Updated: " + date + " GMT-4")
             await ctx.send(embed=embed)
         except Exception:
@@ -145,7 +145,7 @@ async def covid(ctx, *args):
             embed.add_field(name="Deaths Today", value="+" + str(f'{country["todayDeaths"]:,}'))
             embed.add_field(name="Active Cases", value=str(f'{country["active"]:,}'))
             date = datetime.datetime.fromtimestamp(country['updated'] / 1000.0)
-            date = date.strftime('%B %-dth, %Y. %-I:%M %p')
+            date = date.strftime('%B %-d, %Y. %-I:%M %p')
             embed.set_footer(text="Last Updated: " + date + " GMT-4")
             await ctx.send(embed=embed)
 
